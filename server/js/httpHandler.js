@@ -1,7 +1,18 @@
+/*
+
+this file handles the INCOMING http requests from the client.
+
+in this file, we need to write functions that accept HTTP requests, gather the nesseccery data, and then send it back to the client
+
+*/
+
+
 const fs = require('fs');
 const path = require('path');
 const headers = require('./cors');
 const multipart = require('./multipartUtils');
+
+
 
 // Path for the background image ///////////////////////
 module.exports.backgroundImageFile = path.join('.', 'background.jpg');

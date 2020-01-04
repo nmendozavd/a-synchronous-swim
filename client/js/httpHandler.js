@@ -4,6 +4,17 @@
 
   //
   // TODO: build the swim command fetcher here
+
+  var commandFetch = (callback) => {
+    // ajax get request
+    $.ajax({
+      type: 'GET',
+      url: serverUrl,
+      success: (data) => {
+        console.log('success!');
+      }
+    });
+  };
   //
 
   /////////////////////////////////////////////////////////////////////
@@ -17,7 +28,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: '',
       cache: false,
       contentType: false,
       processData: false,
