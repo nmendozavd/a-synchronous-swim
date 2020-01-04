@@ -21,3 +21,8 @@ module.exports.dequeue = () => {
   // returns undefined if messages array is empty
   return messages.shift();
 };
+
+// method to check if messages array length
+module.exports.checkLength = () => {
+  return messages.length;
+}
