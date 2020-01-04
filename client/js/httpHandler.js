@@ -4,18 +4,19 @@
 
   //
   // TODO: build the swim command fetcher here
-
-  var commandFetch = (callback) => {
     // ajax get request
-    $.ajax({
-      type: 'GET',
-      url: serverUrl,
-      success: (data) => {
-        console.log('success!');
-      }
-    });
-  };
-  //
+  //   (() => {setInterval (function() {
+  //   $.get({serverUrl, function (data) {
+  //     console.log('success!');
+  //     }
+  //   })}, 1000);
+  // })();
+
+
+
+
+
+  console.log('Running Passed GET');
 
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
@@ -28,7 +29,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: '',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
