@@ -1,8 +1,13 @@
 // this file is where we make all the calls to the other functions in the server
-
+const messageQueue = require('./js/messageQueue.js')
 const keypressHandler = require('./js/keypressHandler');
+
 // how to put message into messages array: messageQueue.enqueue(message)
-keypressHandler.initialize((message) => console.log(`Message received: ${message}`));
+keypressHandler.initialize((message) => {
+  // pass key press to message enqueue as message
+  messageQueue.enqueue(message)
+  console.log(`Message received: ${message}`)
+});
 
 const httpHandler = require('./js/httpHandler');
 
