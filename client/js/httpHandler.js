@@ -1,3 +1,5 @@
+// CLIENT
+
 (function() {
 
   const serverUrl = 'http://127.0.0.1:3000';
@@ -12,17 +14,18 @@
   //   })}, 1000);
   // })();
 
-  const commandFetch = (data) => {
+  const fetchMoves = () => {
     $.ajax({
       type: 'GET',
       url: serverUrl,
-      success: () => {
-        console.log('Success: GET REQUEST!');
+      success: (data) => {
+        // console.log('Success:', data);
+        SwimTeam.move(data);
       }
     });
   };
 
-  setInterval(commandFetch, 1000)
+  //setInterval(fetchMoves, 2);
 
 
   /////////////////////////////////////////////////////////////////////
@@ -36,7 +39,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: serverUrl,
+      url: 'http://127.0.0.1:3000/background.jpg',
       cache: false,
       contentType: false,
       processData: false,
