@@ -12,11 +12,18 @@
   //   })}, 1000);
   // })();
 
+  const commandFetch = (data) => {
+    $.ajax({
+      type: 'GET',
+      url: serverUrl,
+      success: () => {
+        console.log('Success: GET REQUEST!');
+      }
+    });
+  };
 
+  setInterval(commandFetch, 1000)
 
-
-
-  console.log('Running Passed GET');
 
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
