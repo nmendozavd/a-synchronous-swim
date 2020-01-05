@@ -42,10 +42,20 @@ module.exports.router = (req, res, next = ()=>{}) => {
       res.write(messageQueue.dequeue())
     }
   }
+  // TRYING HERE >>>>>>>>>>>>>>>>
+  if (req.url === '/background.jpg') {
+    var bgjpg = fs.createReadStream('./spec/water-lg.jpg')
 
-  if (req.url === 'http://127.0.0.1:3000/background.jpg') {
-    // fs.readFileSync(backgroundImageFile);
-    // res.write(backgroundImageFile)
+    console.log('Is this working?')
+
+    bgjpg.on('open', function () {
+      bgjpg.pipe(res);
+    })
+
+    bgjpg.on('error', function(err) {
+      res.end(err);
+    });
+
   }
 
 
